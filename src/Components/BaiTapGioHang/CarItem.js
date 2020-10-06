@@ -2,20 +2,22 @@ import React, { Component } from "react";
 
 export default class CarItem extends Component {
   state = {
-    soluong: 0,
+    soLuongSP: this.props.card.soLuong
   };
   xuLyNutGiamCard = () => {
-    //alert('nhan giam')
+    
     // const soLuongHienTai=this.props.card.soLuong;
     // this.props.xuLyNutGiamModal(soLuongHienTai);
-    let giam = this.state.soluong;
+    let giam = this.state.soLuongSP;
     giam--;
+    alert(giam)
     this.setState({
-      soluong: giam,
+      soLuongSP: giam,
     });
   };
   render() {
-    console.log(this.props);
+    //console.log(this.props);
+    
     return (
       <tr className="card-item">
         <td>{this.props.card.maSP}</td>
@@ -24,11 +26,11 @@ export default class CarItem extends Component {
           <img src={this.props.card.hinhAnh} width={50} alt />
         </td>
         <td>
-          <button onClick={this.xuLyNutGiamCard}>-</button> {this.state.soluong}{" "}
+          <button onClick={this.xuLyNutGiamCard}>-</button> {this.state.soLuongSP}
           <button>+</button>
         </td>
         <td>{this.props.card.giaBan}</td>
-        <td>{this.props.card.giaBan * this.props.card.soLuong}</td>
+        <td>{this.props.card.giaBan * this.state.soLuongSP}</td>
         <td>
           <button className="btn btn-danger">Delete</button>
         </td>
