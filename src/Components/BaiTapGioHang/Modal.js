@@ -2,22 +2,11 @@ import React, { Component } from "react";
 import CarItem from "./CarItem";
 export default class Modal extends Component {
 
-  state={
-    soLuongSP:0,
-  }
-xuLyNutGiam=(soLuongHienTai)=>{
 
- soLuongHienTai--
-  console.log("so luong hiejn tai",soLuongHienTai)
-// this.setState({
-// soLuongSP:soLuongHienTai,
-// })
-}
+  
   renderCardList = () => {
     return this.props.cardList.map((card, index) => {
-      return <CarItem key={index} 
-      card={card}
-      xuLyNutGiamModal={this.xuLyNutGiam} />;
+      return <CarItem key={index} card={card} />;
     });
   };
 
